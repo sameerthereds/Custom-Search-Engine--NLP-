@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Local Search Engine University of Memphis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+
+</head>
+
+<body>
+
+  <div class="jumbotron text-center"  style="background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%)" "border-bottom-left-radius: 50% 20%" "border-bottom-right-radius: 50% 20%">
+          
+          <h1> INFORMATION RETRIEVAL PROJECT</h1>
+        </div>
+  <div class="container">
+      <br/>
+    <div class="row justify-content-center">
+          <div class="col-12 col-md-10 col-lg-8">
+             <form class="card card-sm" method="post" action="{{ url_for('results') }}" name="query">
+                  <div class="card-body row no-gutters align-items-center">
+                      <div class="col-auto">
+                          <i class="fas fa-search h4 text-body"></i>
+                      </div>
+
+                          <div class="col">
+                            <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search topics or keywords" id="query" name="query">
+                          </div>
+
+                          <div class="col-auto">
+                            <button class="btn btn-lg btn-success" type="submit">Search</button>
+                          </div>
+                  </div>
+              </form>
+          </div>
+
+      </div>
+  </div>
+    </div>
+<div class="jumbotron text-center"  style="background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%)" "border-bottom-left-radius: 50% 20%" "border-bottom-right-radius: 50% 20%">
+          
+          <h1>Ranked Results for : <b>{{ orig_query }}</h1>
+        </div>
+    
+<div class="container_fluid" style="border:3px solid black" ;"border-style: solid";  "border-width: medium";>
+      <ol>
+    {%  for link in links %}
+        <li class="w3-ul w3-hoverable" ><a href="{{ link }}">{{ link }}</a></li><br>
+    {% endfor %}
+  </ol>
+</div>
+
+
+
+
+
+</body>
+
+</html>
